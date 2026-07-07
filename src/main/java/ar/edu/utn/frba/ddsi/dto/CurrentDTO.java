@@ -1,12 +1,8 @@
 package ar.edu.utn.frba.ddsi.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-public class CurrentDTO {
-  @JsonProperty("temp_c")
-  private Double temperatura;
-}
+public record CurrentDTO(
+    @JsonProperty("temp_c") Double temperatura,
+    @JsonProperty("humidity") Integer humedad
+) {}

@@ -1,5 +1,10 @@
 package ar.edu.utn.frba.ddsi.repositories;
 
+import ar.edu.utn.frba.ddsi.dto.ClimaReponseDTO;
+
+import java.time.Instant;
+
 public record RegistroClima(
-    String Lugar
+    ClimaReponseDTO datosClima,
+    Instant fechaConsulta
 ) {}
