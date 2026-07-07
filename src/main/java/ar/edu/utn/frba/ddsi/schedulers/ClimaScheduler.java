@@ -10,7 +10,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
 
 @Component
 public class ClimaScheduler {
@@ -29,7 +28,7 @@ public class ClimaScheduler {
     ClimaReponseDTO clima;
 
     try {
-      clima = climaService.obtenerClimaActual();
+      clima = climaService.obtenerClima();
     } catch (Exception e) {
       log.error("Error al consultar WeatherAPI: {}", e.getMessage());
       return;

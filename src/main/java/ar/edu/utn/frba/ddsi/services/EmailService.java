@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 public class EmailService {
   private static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-  private String[] destinatarios = new String[] {"admin@clima.com", "emergencias@clima.com", "meteorologia@clima.com"};
+  private final String[] destinatarios = new String[] {"admin@clima.com", "emergencias@clima.com", "meteorologia@clima.com"};
 
   private final JavaMailSender mailSender;
 

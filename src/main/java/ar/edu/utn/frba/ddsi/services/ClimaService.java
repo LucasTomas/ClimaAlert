@@ -14,17 +14,13 @@ public class ClimaService {
   private final RestClient restClient = RestClient.create();
 
   @Value("${weather.city}")
-  private String ciudadConfigurada;
+  private String ciudad;
 
-  public ClimaReponseDTO obtenerClima(String ciudad) {
+  public ClimaReponseDTO obtenerClima() {
     return restClient.get()
         .uri("https://api.weatherapi.com/v1/current.json?key={key}&q={ciudad}",
             API_KEY, ciudad)
         .retrieve()
         .body(ClimaReponseDTO.class);
-  }
-
-  public ClimaReponseDTO obtenerClimaActual() {
-    return obtenerClima(ciudadConfigurada);
   }
 }
